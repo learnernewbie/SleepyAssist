@@ -1,0 +1,339 @@
+:root {
+    /* Theme colors */
+    --primary: rgb(99 102 241);
+    --gradient-start: rgb(139 92 246);
+    --gradient-mid: rgb(217 70 239);
+    --gradient-end: rgb(236 72 153);
+    --radius: 0.5rem;
+    
+    /* Custom colors */
+    --background: #0A0A0B;
+    --card-bg: rgba(31, 31, 35, 0.5);
+    --border-color: rgba(99, 102, 241, 0.2);
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --red-500: #EF4444;
+    --indigo-500: #6366F1;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Typography */
+.gradient-text {
+    background: linear-gradient(
+        to right,
+        var(--gradient-start),
+        var(--gradient-mid),
+        var(--gradient-end)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    color: var(--text-secondary);
+}
+
+/* Header styles */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.bot-icon, .discord-icon {
+    font-size: 3rem;
+    color: var(--indigo-500);
+    margin-bottom: 1rem;
+}
+
+.discord-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #5865F2;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+/* Features grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem 0;
+}
+
+.feature-card {
+    background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    color: var(--indigo-500);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Categories grid */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem 0;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    border-color: var(--indigo-500);
+    transform: translateY(-5px);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-icon {
+    background: rgba(99, 102, 241, 0.2);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--indigo-500);
+}
+
+.commands-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.command-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.command-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.command-name {
+    font-family: monospace;
+    color: var(--indigo-500);
+}
+
+.command-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button.add-bot {
+    background: var(--red-500);
+    color: white;
+}
+
+.cta-button.join-server {
+    background: #5865F2;
+    color: white;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.command-types {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.command-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(31, 31, 35, 0.7);
+    border-radius: 9999px;
+    transition: transform 0.3s ease;
+}
+
+.command-type:hover {
+    transform: scale(1.05);
+}
+
+.command-type.admin .material-icons {
+    color: var(--red-500);
+}
+
+.command-type.public .material-icons {
+    color: #22C55E;
+}
+
+/* Footer */
+.site-footer {
+    background: rgba(31, 31, 35, 0.5);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-brand-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .gradient-text {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Scrollbar styling */
+.commands-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.commands-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.commands-list::-webkit-scrollbar-thumb {
+    background: var(--indigo-500);
+    border-radius: 3px;
+}
