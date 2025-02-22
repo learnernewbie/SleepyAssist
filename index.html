@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepyAssist - Discord Bot Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SleepyAssist</h1>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="active">Dashboard</a></li>
+                    <li><a href="#commands">Commands</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="dashboard" class="dashboard">
+                <h2>Bot Status</h2>
+                <div class="status-card">
+                    <div class="status-indicator online"></div>
+                    <p>Bot is <span id="botStatus">Offline</span></p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Servers</h3>
+                        <p id="serverCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Users</h3>
+                        <p id="userCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Commands Used</h3>
+                        <p id="commandCount">0</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
